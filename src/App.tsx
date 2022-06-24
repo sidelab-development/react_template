@@ -1,11 +1,16 @@
-import { ThemeProvider } from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
 import GlobalStyles from '../src/styles/global';
+
+const Title = styled.h1`
+  font-size: 3rem;
+  color: red;
+`;
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <h1>Hello world</h1>
+      <Title>Hello world</Title>
       <GlobalStyles />
     </ThemeProvider>
   );
