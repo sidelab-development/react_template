@@ -7,7 +7,7 @@ export const theme = {
     zoomHeight: '(max-height: 650px)',
   },
   colors: {
-    primary: '#00ACA9',
+    primary: '',
     inputText: '#ADADAD',
     icons: '#00354F',
     text: '#494949',
