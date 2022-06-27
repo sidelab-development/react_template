@@ -5,4 +5,4 @@ resources:
     name: templates
 
 jobs:
-- template: react-js.azure-pipelines.yml@templates
+- template: pipelines/react-js.azure-pipelines.yml@templates
