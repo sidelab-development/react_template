@@ -4,21 +4,23 @@ export const theme = {
     medium: '(max-width: 390px)',
     large: '(max-width: 414px)',
     notebookHeight: '(max-height: 768px)',
-    zoomHeight: '(max-height: 650px)',
   },
   colors: {
-    primary: '',
-    inputText: '#ADADAD',
-    icons: '#00354F',
-    text: '#494949',
-    title: '#272727',
-    background: '#F3F3F3',
+    primary: '#7f5af0',
+    secondary: '#80F88D',
+    inputText: '#',
+    icons: '#',
+    text: '#',
+    title: '#',
+    background: '#16161a',
     white: '#ffffff',
     success: '#4BB543',
     error: '#E51247',
   },
   space: {
     1: '',
+    2: '',
+    3: '',
   },
   fontSizes: {
     1: '1.6rem',
@@ -36,7 +38,7 @@ export const theme = {
   sizes: {},
   borderWidths: {},
   borderStyles: {},
-  radii: {
+  borderRadius: {
     1: '5px',
     2: '10px',
     3: '15px',
@@ -44,6 +46,5 @@ export const theme = {
   shadows: {
     button: '2px 2px 5px rgba(0, 0, 0, 0.25)',
   },
-  zIndices: {},
   transitions: {},
 };
