@@ -53,3 +53,18 @@ export const Button = styled.button`
     margin-bottom: 1rem;
   `}
 `;
+
+export const Select = styled.select`
+  ${({ theme }) => css`
+    width: 36rem;
+    padding: 1.5rem 1.5rem;
+    font-size: 1.8rem;
+    background-color: ${theme.colors.primary};
+    border: none;
+    border-radius: ${theme.borderRadius[1]};
+    color: ${theme.colors.white};
+  `}
+`;
+
+export const Option = styled.option`
+`;

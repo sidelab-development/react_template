@@ -3,18 +3,18 @@ import { DefaultTheme } from 'styled-components';
 
 import { usePersistedState } from '../hooks/usePersistedState';
 
-type ModalContextProps = {
+type ThemeContextProps = {
   children: ReactNode;
 }
 
-type ModalContextData = {
+type ThemeContextData = {
   toggleTheme: () => void;
   theme: DefaultTheme;
 }
 
-export const ThemeContext = createContext({} as ModalContextData);
+export const ThemeContext = createContext({} as ThemeContextData);
 
-export const ThemeContextProvider = ({ children }: ModalContextProps) => {
+export const ThemeContextProvider = ({ children }: ThemeContextProps) => {
   const [theme, toggleTheme] = usePersistedState();
 
   return (

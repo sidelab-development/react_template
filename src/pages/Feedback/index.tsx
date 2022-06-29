@@ -1,5 +1,5 @@
-import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { schema } from './schema';
 import {
   Button,
@@ -8,18 +8,20 @@ import {
   FormControl,
   Input,
   Label,
+  Option,
+  Select,
 } from './styles';
 
 type Inputs = {
   email: string,
   password: string,
+  type: string,
 };
 
 export function Feedback() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm<Inputs>({
     resolver: yupResolver(schema),
   });
@@ -38,6 +40,19 @@ export function Feedback() {
         </FormControl>
 
         <FormControl>
+          <Label htmlFor="exam-type">Tipo de feedback</Label>
+          <Select
+            id="exam-type"
+            placeholder="Escolha o tipo de feedback"
+            {...register('type', { required: true })}
+          >
+            <Option>Bug</Option>
+            <Option>Melhoria</Option>
+            <Option>Sugestão</Option>
+          </Select>
+        </FormControl>
+
+        <FormControl>
           <Label htmlFor="password">Senha</Label>
           <Input
             id="password"
@@ -47,9 +62,6 @@ export function Feedback() {
         </FormControl>
 
         <Button type="submit">Enviar</Button>
-
-        <h2>{errors.email?.message}</h2>
-        <h2>{errors.password?.message}</h2>
       </Form>
     </Container>
   );
