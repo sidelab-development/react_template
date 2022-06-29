@@ -1,15 +1,21 @@
 import { ThemeProvider } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 import { theme } from './styles/theme';
 import GlobalStyles from '../src/styles/global';
-import { ExampleComponent } from './components/ExampleComponent';
+import { MainRoutes } from './pages/Routes';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <ExampleComponent />
-      <GlobalStyles />
+      <BrowserRouter>
+        <MainRoutes />
+        <GlobalStyles />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
 
 export default App;
+
+// React modal
+// Video
