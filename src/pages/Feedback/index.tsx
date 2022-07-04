@@ -1,9 +1,11 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { schema } from './schema';
 import {
   Button,
   Container,
+  TextArea,
   Form,
   FormControl,
   Input,
@@ -13,32 +15,35 @@ import {
 } from './styles';
 
 type Inputs = {
-  email: string,
-  password: string,
   type: string,
+  description: string,
+  file: string,
+  suggestion: string
 };
 
 export function Feedback() {
   const {
     register,
     handleSubmit,
-  } = useForm<Inputs>({
-    resolver: yupResolver(schema),
-  });
+  } = useForm<Inputs>({ resolver: yupResolver(schema) });
   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+
+  const [image, setImage] = useState('');
+
+  const imageChange = (e: any) => {
+    if (e.target.files && e.target.files.length > 0) {
+      const preview = URL.createObjectURL(e.target.files[0]);
+      setImage(preview);
+    }
+  };
+
+  const removeSelectedImage = () => {
+    setImage('');
+  };
 
   return (
     <Container>
       <Form onSubmit={handleSubmit(onSubmit)}>
-        <FormControl>
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            type="email"
-            {...register('email', { required: true })}
-          />
-        </FormControl>
-
         <FormControl>
           <Label htmlFor="exam-type">Tipo de feedback</Label>
           <Select
@@ -53,11 +58,30 @@ export function Feedback() {
         </FormControl>
 
         <FormControl>
-          <Label htmlFor="password">Senha</Label>
+          <Label htmlFor="description">Descrição</Label>
+          <TextArea
+            id="description"
+            {...register('description', { required: true })}
+          />
+        </FormControl>
+
+        <FormControl>
+          <Label htmlFor="file" id="label-file">Upload</Label>
           <Input
-            id="password"
-            type="text"
-            {...register('password', { required: true })}
+            id="file"
+            type="file"
+            accept="image/png, video/mp4"
+            multiple
+            {...register('file', { required: true })}
+            onChange={imageChange}
+          />
+        </FormControl>
+
+        <FormControl>
+          <Label htmlFor="suggestion">Sugestão</Label>
+          <TextArea
+            id="suggestion"
+            {...register('suggestion', { required: true })}
           />
         </FormControl>
 
