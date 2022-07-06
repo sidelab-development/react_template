@@ -5,6 +5,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto';
   }
 
   html {
@@ -17,7 +18,6 @@ export default createGlobalStyle`
   }
 
   a {
-    color: inherit;
     text-decoration: none;
   }
 
@@ -39,6 +39,7 @@ export default createGlobalStyle`
     width: 100%;
     max-width: 65rem;
     padding: 2rem 2rem;
+    background: #fff;
 
     border-radius: 5px;
 

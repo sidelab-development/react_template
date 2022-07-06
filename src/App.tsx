@@ -1,19 +1,21 @@
-import styled, { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
+import { BrowserRouter } from 'react-router-dom';
 import { theme } from './styles/theme';
 import GlobalStyles from '../src/styles/global';
-
-const Title = styled.h1`
-  font-size: 3rem;
-  color: red;
-`;
+import { MainRoutes } from './pages/Routes';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <Title>Hello world</Title>
-      <GlobalStyles />
+      <BrowserRouter>
+        <MainRoutes />
+        <GlobalStyles />
+      </BrowserRouter>
     </ThemeProvider>
   );
 }
 
 export default App;
+
+// React modal
+// Video
