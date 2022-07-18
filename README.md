@@ -4,7 +4,6 @@
 <h3>
   Esse aqui é um template para utilizarmos nos projetos React, ele ja está pre configurado com todas as libs e estruturas iniciais para começar o projeto.
 </h3>
-
 <br>
 
 ## 💡 Tecnologias
